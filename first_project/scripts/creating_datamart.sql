@@ -1,5 +1,7 @@
 -- DDL витрины данных
-DROP TABLE IF EXISTS dwh.customer_report_datamart;
+-- DROP TABLE IF EXISTS dwh.customer_report_datamart; Закоментировал, так попросили использовать DELETE или TRUNCATE
+
+DELETE FROM dwh.customer_report_datamart;
 
 CREATE TABLE IF NOT EXISTS dwh.customer_report_datamart (
     id BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL, -- идентификатор записи
@@ -25,7 +27,9 @@ CREATE TABLE IF NOT EXISTS dwh.customer_report_datamart (
 );
 
 -- DDL таблицы инкрементальных загрузок
-DROP TABLE IF EXISTS dwh.load_dates_customer_report_datamart;
+-- DROP TABLE IF EXISTS dwh.load_dates_customer_report_datamart; Закоментировал, так как попросили использовать DELETE или TRUNCATE
+
+DELETE FROM dwh.load_dates_customer_report_datamart;
 
 CREATE TABLE IF NOT EXISTS dwh.load_dates_customer_report_datamart (
     id BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL,
